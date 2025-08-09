@@ -1,0 +1,21 @@
+[font]
+size = 11
+builtin_box_drawing = true
+
+[window]
+resize_increments = true
+opacity = 1
+
+[general]
+import = [ "~/.config/alacritty/themes/gruvbox_material_medium_dark.toml",]
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[cursor.style]
+blinking = "On"

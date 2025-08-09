@@ -1,0 +1,13 @@
+set default-bg \#1d2021
+set recolor
+set recolor-keephue
+set recolor-darkcolor \#C5b8a1
+set recolor-lightcolor \#282828
+set selection-notification false
+
+set guioptions "s"
+set font "JetBrainsmono Nerd Font" 
+set statusbar-fg \#dac9a4
+set statusbar-bg \#212526
+set completion-fg \#dac9a4
+set completion-gb \#212526

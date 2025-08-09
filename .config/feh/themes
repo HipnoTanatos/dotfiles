@@ -1,0 +1,5 @@
+g -f test.txt -B "#282828" --scale-down  --cache-size 2048 --slideshow-delay -120 -z
+u -B "#282828" --scale-down
+G -B "#282828" --scale-down  --cache-size 2048 --slideshow-delay -120 -z
+fileBrowser -B "#282828" --scale-down
+

@@ -1,0 +1,16 @@
+{
+    "suggest.noselect": true,
+    "inlayHint.enable": false,
+    "signature.triggerSignatureWait": 500,
+
+    "pyright.enable": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "python.linting.enabled": true,
+    "python.linting.ruffEnabled": true,
+    "pyright.organizeimports.provider": "ruff",
+    "pyright.testing.provider": "pytest",
+    "snippets.ultisnips.pythonPrompt": false,
+
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.useLibraryCodeForTypes": true
+}

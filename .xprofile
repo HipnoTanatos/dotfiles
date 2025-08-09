@@ -1,0 +1,7 @@
+setxkbmap latam &
+picom -b
+export EDITOR=nvim
+
+export PROJECTS_DIR=$HOME/Projects
+export PATH=$PATH:$HOME/.scripts
+
