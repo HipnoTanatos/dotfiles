@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Fast inbox note creation
+#
+
+VAULT="$HOME/SMBH/1- Acreción/"
+
+if [ -n "$1" ]; then
+	filename=$1.md
+else
+	filename=$(date '+%Y-%m-%d_%H-%M-%S').md
+fi
+
+route="$VAULT$filename"
+
+# echo $filename
+# echo $route
+
+touch "$route"
+$EDITOR "$route"

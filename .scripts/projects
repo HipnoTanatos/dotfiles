@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Centralized project search tool
+#
+
+if [ -z "$PROJECTS_DIR" ]; then
+	echo "[*] PROJECTS_DIR env is not defined"
+	echo "    Define a project dir directory.."
+fi
+
+cd $PROJECTS_DIR || exit 1
+
+
+selected=$(find . -maxdepth 3 -name 'setup.sh' | fzf --prompt="Project: ")
+
+if [ -z $selected ]; then
+	exit 1
+else
+	bash $selected
+fi
+

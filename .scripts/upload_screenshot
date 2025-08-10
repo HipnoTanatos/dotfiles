@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+TTL_MINUTES=$(( 3 * 60 * 24 ))
+
+expiration=$(( ($(date +%s) + $TTL_MINUTES) * 1000 ))
+maim -su /tmp/screenshot.png && curl \
+	-F "file=@/tmp/screenshot.png" \
+	-F "expires=$expiration" \
+https://0x0.st | xclip -selection clipboard
+
+	# -F "secret=true" \
+

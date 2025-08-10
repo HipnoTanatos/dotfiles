@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# fast connection to tryhackme network
+#
+
+CONNECTION_CONFIG=''
+
+if [ -n CONNECTION_CONFIG ]; then
+	sudo true && sudo openvpn CONNECTION_CONFIG &
+	http 10.10.10.10 | xmllint --html --xpath '//head/title/text()' - | cat
+fi
+

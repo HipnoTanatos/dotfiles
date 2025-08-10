@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Steam executable wrapper
+# This uses an alternative home directory for steam to maintain your home clean
+# you should cp /usr/share/applications/steam.desktop ~/.local/share/applications/steam.desktop and reroute the Exec binary route to this script to make this work
+#
+
+STEAM_HOME_DIR=/home/Games
+
+
+HOME="$STEAM_HOME_DIR" exec /usr/bin/steam "$@"
