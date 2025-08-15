@@ -1,10 +1,12 @@
 from libqtile import bar, layout, qtile, widget
 
+from enums import Colors
+
 
 layouts = [
     layout.Columns(border_width = 1, margin = 4, border_on_single = True,
-                   border_focus = '#ddc7a1', border_normal = '#928374',
-                   border_focus_stack = '#ddc7a1', border_normal_stack = '#ac9e83',
+                   border_focus = Colors.fg1, border_normal = Colors.green,
+                   border_focus_stack = Colors.fg1, border_normal_stack = Colors.gray,
                    initial_ratio = 1.91, insert_position = 1, split = False,
                    grow_amount = 0.943),
     # initial_ratio 1.4
