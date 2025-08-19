@@ -4,28 +4,27 @@ Repository with my personal config and scripts for my work environment.
 ## Content
 - General user-wide system configuration
 - Custom scripts for System/Project management
-- A minimal yet powerfull and nice-looking visual configuration
+- A **Minimal** yet **Powerfull** and **Nice-Looking** visual configuration
 
 ## Components
-- Arch Linux
-- xorg
-- pipewire
-- qtile
-- picom
-- alacritty
-- sddm
-
 I chose **Xorg** as the display server for compatibility and the ability to fine-tune configurations. **PipeWire** unifies audio and video, which is especially useful for streaming or virtual cameras over a local network. **Qtile** was chosen as the window manager for its high flexibility and scripting capabilities; exploring tiled windows has been an interesting experience, probably a one-way trip at this point. **Picom** is very lightweight on resources and flexible to configure, without sacrificing compatibility or visually appealing effects. I use **Alacritty** as my terminal emulator is extremely fast and efficient. Tmux is almost indispensable with this terminal, especially for long sessions or complex projects, as it integrates really well. For the **greeter**, I chose SDDM just to test QML for now, but honestly, any greeter would do the job. And of course, I chose Arch Linux ~~for its simplicity, minimalism, and full control over the system.~~ btw.<br>
 All components were selected to keep the setup minimal while allowing maximum granular configuration.
+- [Arch Linux](https://archlinux.org/)
+- [X.Org](https://www.x.org/)
+- [Pipewire](https://www.pipewire.org/)
+- [Qtile](https://qtile.org/)
+- [Picom](https://github.com/yshui/picom)
+- [Alacritty](https://alacritty.org/)
+- [SDDM](https://wiki.archlinux.org/title/SDDM)
 
-## Instalation
+## Installation
 Simply clone this repo in your home directory for a complete installation, or manually copy the different modules that compose the repo into your .config/ directory
 
 ```bash
 git clone git@github.com:HipnoTanatos/dotfiles.git ~/
 ```
 
-## Updating
+### Updating
 Run `sudo pacman -Syu`, or `yay` if using AUR packages, to update, after that `dotfiles pull` to update the configs.
 
 ## Usage
