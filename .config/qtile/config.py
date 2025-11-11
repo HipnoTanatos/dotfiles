@@ -1,19 +1,23 @@
+import subprocess
+
 from libqtile import bar, layout, qtile, widget
 from libqtile.bar import Bar
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from libqtile import qtile
 
 import maps
 from enums import Colors
 from settings.groups import groups
 from settings.layouts import layouts
 
+
 keys = maps.keymap
 mouse = maps.mousemap
 
 widget_defaults = dict(
     font = Colors.font,
-    foreground = Colors.fg,
+    foreground = Colors.fg1,
     fontsize = 12,
     padding = 5,
 )
@@ -27,8 +31,8 @@ screens = [
                 widget.GroupBox(
                     highlight_method = 'text',
                     urgent_alert_method = 'text',
-                    active = Colors.fg,
-                    this_current_screen_border = Colors.orange,
+                    active = Colors.fg1,
+                    this_current_screen_border = Colors.yellow,
                     urgent_text = Colors.red,
                     use_mouse_wheel = False,
                     fontsize = 23,
@@ -49,7 +53,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
-                widget.Clock(format="%A %d-%m %I:%M %p"),
+                widget.Clock(format="- %A  %d-%m - %I:%M %p -"),
                 widget.Spacer(length=3),
             ],
             30,
@@ -67,14 +71,12 @@ screens = [
         wallpaper_mode = 'fill',
         x11_drag_polling_rate = 60,
     ),
+
     Screen(
         wallpaper = '~/Pictures/Wallpapers/water_rock_grain_0_100.jpg',
         wallpaper_mode = 'fill',
     )
 ]
-
-# Drag floating layouts.
-
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
@@ -99,9 +101,11 @@ floating_layout = layout.Floating(
         Match(title="Media viewer"),
     ]
 )
+
 auto_fullscreen = False
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = False
 wl_input_rules = None
 wmname = "LG3D"
+

@@ -2,11 +2,13 @@ from datetime import datetime
 from libqtile.config import Key, Drag, Click
 from libqtile.lazy import lazy
 from settings.groups import groups
-# from opp import opacity_up, opacity_down
+from opp import opacity_up, opacity_down
 
 
 terminal = "alacritty"
 mod = "mod4"
+alt = "mod1"
+alt_gr = "mod5"
 keymap = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -94,15 +96,20 @@ keymap = [
     # Misc
     # """
     # Opacity
-    # Key([mod], "XF86AudioLowerVolume", opacity_down(1)),
-    # Key([mod], "XF86AudioRaiseVolume", opacity_up(1)),
+    Key([mod], "XF86AudioLowerVolume", opacity_down(1)),
+    Key([mod], "XF86AudioRaiseVolume", opacity_up(1)),
 
     # Screen control
     Key([mod], "Tab", lazy.next_screen()),
 
     # Key([], "Print", lazy.spawn(f"maim /home/HipnoTanatos/Screenshots/{datetime.now().strftime('%d-%m-%Y_%H:%M:%S')}.png")),
     #Key([], "Print", lazy.spawn("maim -s | xclip -selection clipboard -t image/png")),
-    Key([], "Print", lazy.spawn("upload_screenshot")),
+
+    Key([], "Print", lazy.spawn("screen_shot")),
+    Key([alt], "Print", lazy.spawn("screen_shot -r")),
+    Key(["shift"], "Print", lazy.spawn("screen_shot -u")),
+
+
     Key([mod], "d", lazy.spawn("qtile run-cmd -g 2 -f alacritty")),
 ]
 

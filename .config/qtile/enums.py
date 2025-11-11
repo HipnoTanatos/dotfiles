@@ -1,4 +1,6 @@
 class Colors:
+    transparent = '#00000000'
+
     bg = '#282828'
     bg_h = '#1D2021'
     bg_s = '#32302f'
@@ -15,8 +17,6 @@ class Colors:
 
     gray = '#928374'
     gray_h = '#A89984'
-
-    transparent = '#00000000'
 
     red = '#CC241D'
     red_h = '#FB4934'
