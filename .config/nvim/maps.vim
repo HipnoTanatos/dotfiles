@@ -1,5 +1,6 @@
 let mapleader=" "
 inoremap jk <Esc>
+nnoremap <leader><Esc> :noh<CR>
 
 
 "split resize

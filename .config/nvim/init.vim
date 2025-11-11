@@ -3,7 +3,6 @@ set numberwidth=1
 set relativenumber
 set clipboard=unnamedplus
 set showmatch
-set sw=4
 set noshowmode 
 set mouse=a
 set updatetime=300
@@ -14,8 +13,20 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=99
 set foldtext=CustomFoldText()
-set expandtab
 
+" Tabspaces
+set shiftwidth=2
+set tabstop=2
+set expandtab
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
+" use :retab to readjust tabulations
+
+" markdown
+"set wrap
+"set linebreak
+"set breakindent
+autocmd FileType markdown setlocal wrap linebreak breakindent
+"
 
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/maps.vim
@@ -41,7 +52,7 @@ let g:fzf_color = {  }
 " let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = ['right,50%,sharp', 'ctrl-/']
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .obsidian --exclude .trash'
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .obsidian --exclude .trash --exclude node_modules'
 
 let g:copilot_enabled=0
 let g:copilot_workspace_folders = ["~/Projects"]
