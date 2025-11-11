@@ -8,7 +8,7 @@ Repository with my personal config and scripts for my work environment.
 
 ## Components
 I chose **Xorg** as the display server for compatibility and the ability to fine-tune configurations. **PipeWire** unifies audio and video, which is especially useful for streaming or virtual cameras over a local network. **Qtile** was chosen as the window manager for its high flexibility and scripting capabilities; exploring tiled windows has been an interesting experience, probably a one-way trip at this point. **Picom** is very lightweight on resources and flexible to configure, without sacrificing compatibility or visually appealing effects. I use **Alacritty** as my terminal emulator is extremely fast and efficient. Tmux is almost indispensable with this terminal, especially for long sessions or complex projects, as it integrates really well. For the **greeter**, I chose SDDM just to test QML for now, but honestly, any greeter would do the job. And of course, I chose Arch Linux ~~for its simplicity, minimalism, and full control over the system.~~ btw.<br>
-All components were selected to keep the setup minimal while allowing maximum granular configuration.
+All components were hand-picked to keep the setup minimal while allowing maximum granular configuration.
 - [Arch Linux](https://archlinux.org/)
 - [X.Org](https://www.x.org/)
 - [Pipewire](https://www.pipewire.org/)
@@ -40,6 +40,10 @@ Run `sudo pacman -Syu`, or `yay` if using AUR packages, to update, after that `d
 - `Mod` + `E` - Open file browser
 - `Mod` `Shift` + `Q` - Log out
 - `Mod` `Shift` + `R` - Restart Window Manager
+- ImprPant - ScreenShot, save and copy binary
+- ImprPant Shift - ScreenShot, save, upload and copy link
+- Alt ImprPant - ScreenRecord                                                  # TODO
+- Mod ImprPant - ScreenShot/Record manager                                     # TODO
 
 # Installed Software
 #### Administration
@@ -64,6 +68,8 @@ rofi -- application launcher and window switcher<br>
 keepassxc -- password manager with database encryption<br>
 playerctl -- control media players that implement MPRIS<br>
 maim -- take screenshots<br>
+yt-dlp -- cli audio|video downloader<br>
+ffmpeg -- wide foss libraries for audio and video manipulation<br>
 ueberzug -- image preview in terminal (used with ranger)<br>
 rclone -- sync files from/to cloud storage<br>
 rsync -- remote file sync tool<br>
@@ -101,8 +107,7 @@ krita -- digital painting<br>
 inkscape -- vector graphics editor<br>
 blender-3.6-bin -- 3D creation suite<br>
 stremio -- media streaming hub<br>
-kotatogram -- telegram fork<br>
-gpick
+gpick -- color picker | pallete editor
 
 
 #### Gaming
@@ -131,6 +136,8 @@ base-devel -- general build tools such as compiler, utilities, etc<br>
 git -- version control system<br>
 nodejs -- js runtime environment<br>
 npm -- Node.js package manager<br>
+pnpm -- Better package manager for node, better management of shared dependencies.
+wrangler --  manage cloudflare
 jdk-openjdk -- Open-Source implementation of JDK<br>
 drawio-desktop -- diagram/flowchart editor<br>
 graphviz -- tool for drawing graph visualization using dot-lang<br>
@@ -138,8 +145,8 @@ docker -- container engine for isolated app environments<br>
 the_silver_searcher -- code-oriented faster ack/grep alternative<br>
 uv -- Python packet manager<br>
 python-pynvim -- python provider for nvim<br>
-python-pyqt5 -- python bindings for qt5 (i use this for scripting in krita)
-cmake<br>
+python-pyqt5 -- python bindings for qt5 (i use this for scripting in krita)<br>
+cmake -- application builder | utilities atomator<br>
 tree -- directory listing display deep indented list of files (i use this for documentation)
 
 
