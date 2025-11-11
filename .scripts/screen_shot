@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Screenshot manager
+# 
+
+
+filename=$(date +%Y-%m-%d_%H-%M-%S).png
+location=~/Pictures/screenshots/
+usage="Usage: $(basename "$0") [--upload|-u] [--ttl MINUTES] [--secret|-s]"
+
+# Default values
+upload=false                                               # upload to internet
+secret=false                                               # obfuscate url
+TTL_MINUTES=$(( 3 * 60 * 24 ))                             # 3 days
+
+hide_cursor=false
+select_region=false
+
+# Parse flags
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --upload|-upload|-u)
+            upload=true
+            ;;
+        --ttl|-ttl)
+            TTL_MINUTES=$2
+            shift
+            ;;
+        --secret|-secret|-s)
+            secret=true
+            ;;
+        --no-cursor|-no-cursor|-nc)
+          hide_cursor=true
+          ;;
+        --region|-region|-r)
+          select_region=true
+          ;;
+        *)
+            echo "$usage"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+take_screenshot() {
+  save_location="$location$filename"
+  args=()
+  $hide_cursor && args+=(-u)
+  $select_region && args+=(-s)
+
+  maim "${args[@]}" $save_location
+}
+
+upload_to_0x0() {
+    url="https://0x0.st"
+    expiration=$(( ($(date +%s) + $TTL_MINUTES) * 1000 ))  # in ms
+    args=()
+    args+=(-F "file=@$location$filename")
+    args+=(-F "expires=$expiration")
+    $secret && args+=(-F "secret=true")
+
+    curl "${args[@]}" $url | xclip -selection clipboard
+}
+
+
+take_screenshot
+
+if $upload; then
+    upload_to_0x0
+else
+    xclip -selection clipboard -t image/png -i "$location$filename"
+fi
+

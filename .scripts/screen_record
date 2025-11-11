@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Screen recorder
+
+
+filename=$(date +%Y-%m-%d_%H-%M-%S).mkv
+location=~/Videos/records/
+display1='x11grab -i :0.0'
+display2='x11grab -i :0.1'
+touch $location$filename
+
+ffmpeg -video_size 1920x1080 -framerate 30 -f $display1 \
+  -f pulse -i default \
+  -c:v libx264 -preset veryfast -crf 23 \
+  -c:a aac $location$filename
+

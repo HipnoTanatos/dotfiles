@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Graphic Tablet configuration script
+#
+
+stylus='HUION Huion Tablet stylus'
+main_monitor=HEAD-0
+
+tablet() {
+    xsetwacom set "$stylus" "$@"
+}
+
+
+tablet MapToOutput $main_monitor
+tablet Area 0 0 55880 31432
+

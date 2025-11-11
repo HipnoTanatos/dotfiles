@@ -11,11 +11,22 @@ fi
 cd $PROJECTS_DIR || exit 1
 
 
+if [[ "$1" == "new" || "$1" == "n" ]]; then
+  echo "[*] Enter project name.."
+  read project_name
+  mkdir "./$project_name"
+  echo "tmux" >> "./$project_name/setup.sh"
+  chmod u+x "./$project_name/setup.sh"
+  exit 0
+fi
+
 selected=$(find . -maxdepth 3 -name 'setup.sh' | fzf --prompt="Project: ")
 
 if [ -z $selected ]; then
 	exit 1
 else
-	bash $selected
+        dir=$(dirname "$selected")
+        cd "$dir" || exit 1
+        bash ./setup.sh
 fi
 
