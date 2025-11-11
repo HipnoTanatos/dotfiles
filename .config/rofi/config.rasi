@@ -140,6 +140,14 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+
+  kb-row-up: "Up,Control+k";
+  kb-row-down: "Down,Control+j";
+  // font: "JetBrains Nerd Font Mono 12";
+
+  kb-remove-to-eol: "Control+Alt+k";
+  kb-accept-entry: "Control+Alt+j,Control+m,Return,KP_Enter";
+
   timeout {
       action: "kb-cancel";
       delay:  0;
