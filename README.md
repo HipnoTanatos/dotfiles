@@ -148,6 +148,7 @@ python-pynvim -- python provider for nvim<br>
 python-pyqt5 -- python bindings for qt5 (i use this for scripting in krita)<br>
 cmake -- application builder | utilities atomator<br>
 tree -- directory listing display deep indented list of files (i use this for documentation)
+httpie -- CLI utilitie for test apis
 
 
 #### Database Server
